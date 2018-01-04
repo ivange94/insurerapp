@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "name": "insurerapp",
+  "description": "Web app to manage insurers",
+  "launch_path": "index.html",
+  "icons": {
+    "48": "/img/omrs-button.png"
+  },
+  "developer": {
+    "name": "ivange94",
+    "url": "https://github.com/ivange94/insurerapp"
+  },
+  "default_locale": "en",
+    "activities": {
+      "openmrs": {
+        "href": "*"
+      }
+    }
+}
