@@ -4,11 +4,38 @@ class HomeController {
 
         vm.insurers;
 
-        vm.resourceName = "insurer";
-        vm.params = {includeAll: true, name: "", limit: 10, startIndex: 0}; //request params
-        openmrsRest.listFull(vm.resourceName, vm.params).then(function (response) {
-            vm.insurers = response.results;
-        });
+        //Properties for list component
+        vm.resource = "conceptclass";
+        vm.disableLinks = true;
+        vm.limit = 10; //Default value
+        vm.columns= [
+            {
+                "property": "name",
+                "label": "Name"
+            },
+            {
+                "property": "description",
+                "label":"Description"
+            },
+            {
+                "property": "uuid",
+                "label": "UUID"
+            }];
+        vm.actions = [
+            {
+                "action":"edit",
+                "label":"Edit",
+                "link":"#/class/{uuid}"
+            },
+            {
+                "action":"retire",
+                "label":"Retire"
+            },
+            {
+                "action":"unretire",
+                "label":"unretire"
+            }
+        ];
     }
 }
 

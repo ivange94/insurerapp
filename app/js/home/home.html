@@ -4,26 +4,8 @@
 <div id="body-wrapper">
   <div id="content" class="container" style="padding: 15px">
     <a ui-sref="insurer"><button><i class="icon-plus"></i>Add Insurer</button></a>
-    <br><br><!--
-    <openmrs-list resource="vm.resource" columns="vm.columns" actions="vm.actions" list-all="true" limit="vm.limit" disable-links="vm.disableLinks"></openmrs-list>
-    -->
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>UUID</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="insurer in vm.insurers track by $index">
-          <td>{{insurer.display}}</td>
-          <td>{{insurer.description}}</td>
-          <td>{{insurer.uuid}}</td>
-          <td></td>
-        </tr>
-      </tbody>
+    <br><br>
+      <openmrs-list resource="vm.resource" columns="vm.columns" actions="vm.actions" list-all="true" limit="vm.limit" disable-links="vm.disableLinks"></openmrs-list>
     </table>
   </div>
 </div>
