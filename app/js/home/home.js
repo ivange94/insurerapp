@@ -1,8 +1,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import breadcrumbsComponent from './components/breadcrumbs.component.js';
-import headerComponent from './components/header.component.js';
+import breadcrumbsComponent from './components/breadcrumbs/breadcrumbs.component.js';
+import headerComponent from './components/header/header.component.js';
 import uicommons from 'openmrs-contrib-uicommons';
+import insurerEditComponent from './components/insurerEdit/insurerEdit.component';
+import homeComponent from "./home.component";
 
 let homeModule = angular.module('home', [ uiRouter, 'openmrs-contrib-uicommons'])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -11,7 +13,12 @@ let homeModule = angular.module('home', [ uiRouter, 'openmrs-contrib-uicommons']
 
         $stateProvider.state('home', {
             url: '/',
-            template: require('./home.html')
+            template: `<home></home>`,
+        });
+
+        $stateProvider.state('insurer', {
+           url: '/add-insurer',
+           template: `<insurer-edit></insurer-edit>`
         });
     })
     .config(['$qProvider', function ($qProvider) {
@@ -25,6 +32,8 @@ let homeModule = angular.module('home', [ uiRouter, 'openmrs-contrib-uicommons']
     }])
 
     .component('breadcrumbsComponent', breadcrumbsComponent)
-    .component('headerComponent', headerComponent);
+    .component('headerComponent', headerComponent)
+    .component('insurerEdit', insurerEditComponent)
+    .component('home', homeComponent);
 
 export default homeModule;

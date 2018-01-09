@@ -1,5 +1,5 @@
-import template from '../breadcrumbs.html';
-import controller from '../controllers/breadcrumbs.controller.js';
+import template from './breadcrumbs.html';
+import controller from './breadcrumbs.controller.js';
 
 let breadcrumbsComponent = {
   restrict: 'E',

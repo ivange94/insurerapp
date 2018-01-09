@@ -1,0 +1,34 @@
+<openmrs-breadcrumbs links="vm.links"></openmrs-breadcrumbs>
+<div id="body-wrapper" ng-show="!vm.deleteClicked">
+    <div id="content" class="container">
+        <h1><i class="icon-pencil"></i>&#160;Edit Insurer</h1>
+        <form name="insurerEdit">
+            <div class="info-body" align="center">
+                <fieldset style="width: 90%;">
+                    <div align="left">
+                        <div>{{"Name" | translate}}
+                            <span class="required">*</span>
+                            <input type="text" name="name" ng-model="vm.insurer.name" ng-required="true">
+                        </div>
+
+                        <div>{{"Description" | translate}}
+                            <textarea name="description" rows="3" cols="40" ng-model="vm.description"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div style="padding-top: 13px">
+
+                <button ng-disabled="insurerEdit.$invalid" ng-click="vm.editInsurer()">
+                    <i class="icon-ok"></i>
+                    {{"Save Insurer" | translate}}
+                </button>
+                <button ng-click="vm.cancel()">
+                    <i class="icon-remove"></i>
+                    {{"Cancel" | translate}}
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
